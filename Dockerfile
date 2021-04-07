@@ -24,6 +24,8 @@ EXPOSE 80
 ENV P_USER="root" \
     P_PASS="password" \
     P_URL="http://example.com:9000" \
-    P_PRUNE="false"
+    P_PRUNE="false" \
+    P_IMG="img" \
+    P_VERSION="version"
 
-ENTRYPOINT ["/stack-update.sh"]
+ENTRYPOINT /stack-update.sh $P_IMG $P_VERSION
